@@ -31,7 +31,13 @@ body {
   margin: 20px;
 }
 
+.order-form {
+  margin-top: 20px;
+  height: 80%;
 
+  border-radius: 20px;
+  border: 1px sold black;
+}
 #works {
   width: 90%;
   padding-left: 40px;
