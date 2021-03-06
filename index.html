@@ -195,7 +195,7 @@
                 <form>
                   <div class="mb-3">
                     <label for="pizza">Select pizza category</label>
-                    <select id="pizza" class="form-control" required>
+                    <select id="pizza" class="form-control">
                       <option value="">...</option>
                       <option value="meatarian">Meatarian</option>
                       <option value="vegetarian">Vegetarian</option>
@@ -203,7 +203,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="pizza">Select your pizza</label>
-                    <select id="pizza" class="form-control" required>
+                    <select id="pizza" class="form-control">
                       <option value="">...</option>
                       <option value="BBQ">BBQ</option>
                       <option value="peri peri">Peri Peri</option>
@@ -212,7 +212,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="size">Size</label>
-                    <select id="pizza" class="form-control" required>
+                    <select id="pizza" class="form-control">
                       <option value="">...</option>
                       <option value="large">Large</option>
                       <option value="medium">Medium</option>
@@ -221,7 +221,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="topping">Topping</label>
-                    <select class="form-control" id="topping" required>
+                    <select class="form-control" id="topping">
                       <option value="">...</option>
                       <option value="mushroom">Mushroom</option>
                       <option value="pepperoni">Pepperoni</option>
@@ -230,7 +230,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="crust">Crust</label>
-                    <select class="form-control" id="crust" required>
+                    <select class="form-control" id="crust">
                       <option value="">...</option>
                       <option value="thick">Thick</option>
                       <option value="thin">Thin</option>
@@ -241,8 +241,7 @@
                     <input class="form-control" type="number" value="1" />
                   </div>
 
-                  <button id="myBtn" class="btn btn-primary">
-                    <!-- type="submit" -->
+                  <button type="submit" id="myBtn" class="btn btn-primary">
                     Add
                   </button>
 
@@ -250,6 +249,20 @@
                     <p>Cart items: <span class="cart">1</span></p>
                   </div>
                 </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-xl">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Your Order</h4>
+                </div>
+                <div class="modal-body"></div>
               </div>
             </div>
           </div>

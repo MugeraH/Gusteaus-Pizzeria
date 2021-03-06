@@ -1,5 +1,16 @@
+var myModal = new bootstrap.Modal(document.getElementById('myModal'))
+
+
+
+
+
 $(document).ready(function() {
 
+
+  $('#myBtn').click(()=>{
+    myModal.show()
+    console.log('hm');
+  })
 
   $(function(){
     let $grid = $("#tp-grid"),
