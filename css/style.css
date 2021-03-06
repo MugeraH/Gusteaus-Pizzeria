@@ -21,6 +21,7 @@ body {
   flex: 2 1 auto;
   padding: 20px;
   background-color: black;
+  overflow: scroll;
 }
 
 .aside-section {
@@ -34,13 +35,18 @@ body {
 .order-form {
   margin-top: 20px;
   height: 80%;
-
   border-radius: 20px;
   border: 1px sold black;
+}
+
+.modal.fade {
+  z-index: 10000000 !important;
 }
 #works {
   width: 90%;
   padding-left: 40px;
+  height: 80vh;
+  padding-top: 5%;
 }
 #wrap {
   width: 70%;
@@ -56,6 +62,7 @@ body {
 .wrapper img {
   width: 200px;
   height: 200px;
+  z-index: 1;
 }
 
 .topbar {
@@ -64,20 +71,8 @@ body {
   margin: 0 0 40px;
 }
 
-.back {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  left: 100%;
-  top: 5%;
-  margin: -20px 0 0 -20px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 38px;
-  color: #999;
-  background-color: #ddd;
-  cursor: pointer;
-  user-select: none;
+#back {
+  display: none;
 }
 
 .tp-grid {
@@ -97,7 +92,7 @@ body {
 }
 
 .no-js .tp-grid li {
-  /* position: relative; */
+  position: relative;
   display: inline-block;
 }
 
