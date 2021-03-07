@@ -191,7 +191,7 @@
                 <form>
                   <div class="mb-2">
                     <label for="pizza">Select pizza category</label>
-                    <select id="pizzaCategory" class="form-control">
+                    <select id="pizzaCategory" class="form-control" required>
                       <option value="">...</option>
                       <option value="meatarian">Meatarian</option>
                       <option value="vegetarian">Vegetarian</option>
@@ -199,13 +199,13 @@
                   </div>
                   <div class="mb-2">
                     <label for="pizza">Select your pizza</label>
-                    <select id="pizzaOption" class="form-control">
+                    <select id="pizzaOption" class="form-control" required>
                       <option value="">...</option>
                     </select>
                   </div>
                   <div class="mb-3">
                     <label for="size">Size</label>
-                    <select id="pizzaSize" class="form-control">
+                    <select id="pizzaSize" class="form-control" required>
                       <option value="">...</option>
                       <option value="large">Large</option>
                       <option value="medium">Medium</option>
@@ -214,7 +214,7 @@
                   </div>
                   <div class="mb-2">
                     <label for="topping">Topping</label>
-                    <select class="form-control" id="topping">
+                    <select class="form-control" id="topping" required>
                       <option value="">...</option>
                       <option value="mushroom">Mushroom</option>
                       <option value="pepperoni">Pepperoni</option>
@@ -223,7 +223,7 @@
                   </div>
                   <div class="mb-2">
                     <label for="crust">Crust</label>
-                    <select class="form-control" id="crust">
+                    <select class="form-control" id="crust" required>
                       <option value="">...</option>
                       <option value="thick">Thick</option>
                       <option value="thin">Thin</option>
@@ -235,7 +235,7 @@
                       class="form-control"
                       id="amount"
                       type="number"
-                      value="1"
+                      required
                     />
                   </div>
 
@@ -323,6 +323,7 @@
                             type="text"
                             id="fullName"
                             class="form-control"
+                            required
                           />
                         </div>
                         <div class="mb-2">
@@ -331,6 +332,7 @@
                             type="number"
                             id="phone"
                             class="form-control"
+                            required
                           />
                         </div>
                         <div class="mb-2">
@@ -340,16 +342,19 @@
                             placeholder="CBD,Gpo/Archives or Kasarani,Naivas"
                             id="location"
                             class="form-control"
+                            required
                           />
                         </div>
-                        <button type="submit" class="btn btn-dark text-uppercase checkoutBtn">
+                        <button
+                          type="submit"
+                          class="btn btn-dark text-uppercase checkoutBtn"
+                        >
                           Checkout
                         </button>
                       </form>
                     </div>
                   </div>
                 </div>
-          
               </div>
             </div>
           </div>
@@ -368,9 +373,7 @@
                   ></button>
                 </div>
                 <div class="modal-body">
-                  <p id="checkoutText">
-                  
-                  </p>
+                  <p id="checkoutText"></p>
                 </div>
               </div>
             </div>
