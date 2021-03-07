@@ -54,7 +54,7 @@ body {
 }
 
 .cart {
-  /* display: none; */
+  display: none;
   background-color: #c81717;
   color: white;
   padding: 10px;

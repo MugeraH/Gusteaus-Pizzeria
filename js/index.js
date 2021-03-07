@@ -130,31 +130,50 @@ $("#order-summary").append(
       newPizzaOrder.pizza +
     " (" +
       newPizzaOrder.size +
-    ") - " +
+    ") - Ksh." +
   newPizzaOrder.getPizzaSizePrice() +
     "</th>" +
     "<td>" +
     newPizzaOrder.topping +
-    " - " +
+    " - Ksh." +
   newPizzaOrder.getToppingPrice() +
     "</td>" +
     "<td>" +
       newPizzaOrder.crust +
-    " - " +
+    " - Ksh." +
   newPizzaOrder.getCrustPrice() +
     "</td>" +
     "<td>" +
   newPizzaOrder.amount +
     "</td>" +
-    "<td>" +
+    "<td>" + 'Ksh.'+
     newPizzaOrder.getPizzaPrice() +
         "</td>" +
     "</tr>"
 );
 
-$("#total-amount").empty();
-    $("#total-amount").append(totalCost);
-    $(".total-amount").show();
+
+$("#total-amount").append(totalCost);
+$(".total-amount").show();
+
+let collect = true;
+if(collect){
+  $('.checkoutBtn').click(()=>{
+    myModal.hide()
+    checkoutModal.show()
+    $('#checkoutText').text(`Dear Customer your order will be ready within the hour! Your order total is Ksh.${totalCost}.For any inquries you can reach us at 0721000000`)
+  
+  })
+}else{
+  $('.checkoutBtn').click(()=>{
+    myModal.hide()
+    checkoutModal.show()
+    $('#checkoutText').text(`  Dear ${customerName} your order will be delivered to ${location} within
+    two hours! Your order total is Ksh.${totalCost} Our rider will call
+    you on arrival or you can reach us at 0721000000 if you do not recieve any communication within the specific time period`)
+  
+  })
+}
 
 
 });
@@ -168,11 +187,7 @@ $('#myBtn').click(()=>{
 
 })
 
-$('.checkoutBtn').click(()=>{
-  myModal.hide()
-  checkoutModal.show()
 
-})
 
 $('#deliveryBtn').click(()=>{
  $('#collectOption > button').fadeOut(200)
