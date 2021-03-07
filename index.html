@@ -18,7 +18,7 @@
   </head>
   <body>
     <div class="container-fluid m-0 p-0">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#" id="myBtn">Gusteau's</a>
           <button
@@ -186,36 +186,33 @@
               </div>
             </div>
             <div class="aside-section">
-              <div class="order-form text-center pt-1">
+              <div class="order-form text-center">
                 <p>Place your order</p>
                 <form>
-                  <div class="mb-3">
+                  <div class="mb-2">
                     <label for="pizza">Select pizza category</label>
-                    <select id="pizza" class="form-control">
+                    <select id="pizzaCategory" class="form-control">
                       <option value="">...</option>
                       <option value="meatarian">Meatarian</option>
                       <option value="vegetarian">Vegetarian</option>
                     </select>
                   </div>
-                  <div class="mb-3">
+                  <div class="mb-2">
                     <label for="pizza">Select your pizza</label>
-                    <select id="pizza" class="form-control">
+                    <select id="pizzaOption" class="form-control">
                       <option value="">...</option>
-                      <option value="BBQ">BBQ</option>
-                      <option value="peri peri">Peri Peri</option>
-                      <option value="hawaaian">Hawaiian</option>
                     </select>
                   </div>
                   <div class="mb-3">
                     <label for="size">Size</label>
-                    <select id="pizza" class="form-control">
+                    <select id="pizzaSize" class="form-control">
                       <option value="">...</option>
                       <option value="large">Large</option>
                       <option value="medium">Medium</option>
                       <option value="small">Small</option>
                     </select>
                   </div>
-                  <div class="mb-3">
+                  <div class="mb-2">
                     <label for="topping">Topping</label>
                     <select class="form-control" id="topping">
                       <option value="">...</option>
@@ -224,7 +221,7 @@
                       <option value="sausage">Sausage</option>
                     </select>
                   </div>
-                  <div class="mb-3">
+                  <div class="mb-2">
                     <label for="crust">Crust</label>
                     <select class="form-control" id="crust">
                       <option value="">...</option>
@@ -232,18 +229,20 @@
                       <option value="thin">Thin</option>
                     </select>
                   </div>
-                  <div class="mb-3">
+                  <div class="mb-2">
                     <label for="amount">Amount</label>
-                    <input class="form-control" type="number" value="1" />
+                    <input class="form-control" id="amount"type="number" value="1" />
                   </div>
 
-                  <button type="submit" id="myBtn" class="btn btn-primary">
+                  <button type="submit" id="myBtn" class="btn btn-outline-dark">
                     Add
                   </button>
-
-                  <div class="cart">
-                    <p>Cart items: <span class="cart">1</span></p>
+                  <div class="d-flex justify-content-center ">
+                    <div class="cart text-center">
+                      <p class="p-0 m-0">Cart items: <span class="cart">1</span></p>
+                    </div>
                   </div>
+                
                 </form>
               </div>
             </div>
@@ -251,23 +250,132 @@
         </div>
 
         <div class="col-md-12">
-          <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog modal-xl">
-              <!-- Modal content-->
+          Modal
+          <div
+            class="modal fade"
+            id="myModal"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            data-backdrop="static"
+            data-keyboard="false"
+            [config]="{ignoreBackdropClick: true, keyboard: false}"
+          >
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+              Modal content
               <div class="modal-content">
                 <div class="modal-header">
                   <h4 class="modal-title">Your Order</h4>
                 </div>
                 <div class="modal-body">
-                  <p>hm</p>
-                  <p>hm</p>
-                  <p>hm</p>
-                  <p>hm</p>
-                  <p>hm</p>
-                  <p>hm</p>
-                  <p>hm</p>
-                  <p>hm</p>
-                  <p>hm</p>
+                  <div class="col-md-12 hidden" id="orders-div">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">Type</th>
+                          <th scope="col">Topping</th>
+                          <th scope="col">Crust</th>
+                          <th scope="col">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody id="order-summary"></tbody>
+                    </table>
+
+                    <p class="delivery-cost hidden">
+                      Delivery: Ksh. <span id="delivery-amount"></span>
+                    </p>
+                    <p class="total-amount hidden">
+                      Total: Ksh. <span id="total-amount"></span>
+                    </p>
+
+                    <br /><br />
+                    <div
+                      class="d-flex justify-content-center"
+                      id="collectOption"
+                    >
+                      <button
+                        class="btn btn-dark mx-4 text-uppercase checkoutBtn"
+                      >
+                        Collect
+                      </button>
+                      <button
+                        class="btn btn-dark text-uppercase"
+                        id="deliveryBtn"
+                      >
+                        Delivery
+                      </button>
+                    </div>
+
+                    <div class="d-flex justify-content-center delivery-form">
+                      <form id="deliveryForm">
+                        <p>
+                          Please fill out your details so we can arrange the
+                          delivery of your order at Ksh:300
+                        </p>
+                        <div class="mb-2">
+                          <label for="fullName">Your Name</label>
+                          <input
+                            type="text"
+                            id="fullName"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="mb-2">
+                          <label for="phone">Phone Number</label>
+                          <input
+                            type="number"
+                            id="phone"
+                            class="form-control"
+                          />
+                        </div>
+                        <div class="mb-2">
+                          <label for="location">Location</label>
+                          <input
+                            type="text"
+                            placeholder="CBD,Gpo/Archives or Kasarani,Naivas"
+                            id="location"
+                            class="form-control"
+                          />
+                        </div>
+                        <button class="btn btn-dark text-uppercase checkoutBtn">
+                          Checkout
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="modal fade" id="checkoutModal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Dear NAME your order will be delivered to LOCATION within
+                    two hours! Your order total is: TOTAL Our rider will call
+                    you on arrival or you can reach us at 0721000000
+                  </p>
                 </div>
               </div>
             </div>
