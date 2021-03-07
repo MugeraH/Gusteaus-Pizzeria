@@ -20,7 +20,7 @@
     <div class="container-fluid m-0 p-0">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#" id="myBtn">Gusteau's</a>
+          <a class="navbar-brand" href="#">Gusteau's</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -239,12 +239,25 @@
                     />
                   </div>
 
-                  <button type="submit" id="myBtn" class="btn btn-outline-dark">
+                  <button type="submit" class="btn btn-outline-dark">
                     Add
                   </button>
                   <div class="d-flex justify-content-center">
                     <div class="cart text-center">
-                      <p class="p-0 m-0">Cart items: <span id="cart"></span></p>
+                      <div class="cart-btn">
+                      
+                        <img
+                          src="./images/shopping-cart.png"
+                          class="mx-3"
+                          alt=""
+                        />
+                        <button id="myBtn" class="btn cart-button mx-5">Checkout</button>
+                      
+                      </div>
+
+                      <p class="cart-items p-0 m-0">
+                        <span id="cart-count"></span>
+                      </p>
                     </div>
                   </div>
                 </form>
@@ -254,7 +267,6 @@
         </div>
 
         <div class="col-md-12">
-          Modal
           <div
             class="modal fade"
             id="myModal"
@@ -266,7 +278,6 @@
             [config]="{ignoreBackdropClick: true, keyboard: false}"
           >
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
-              Modal content
               <div class="modal-content">
                 <div class="modal-header">
                   <h4 class="modal-title">Your Order</h4>

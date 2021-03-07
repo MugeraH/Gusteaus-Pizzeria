@@ -41,8 +41,7 @@ body {
 }
 
 .aside-section {
-  height: 80vh;
-
+  height: 83vh;
   position: sticky;
   transition: all 0.2s ease;
   width: 350px;
@@ -55,13 +54,40 @@ body {
 
 .cart {
   display: none;
-  background-color: #c81717;
-  color: white;
   padding: 10px;
   margin: 10px;
   width: 300px;
+  position: relative;
 }
-.toppings{
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+.cart-btn img {
+  width: 40px;
+}
+
+.cart-items {
+  position: absolute;
+  top: 3px;
+  right: 215px;
+  padding: 0 9px;
+  border-radius: 50%;
+  color: #c81717;
+}
+#cart-count {
+  font-size: 17px;
+  font-weight: 600;
+}
+.cart-button {
+  border: 1px solid #c81717;
+  color: #c81717;
+}
+.cart-button:hover {
+  background-color: #c81717;
+  color: white;
+}
+.toppings {
   display: flex;
 }
 

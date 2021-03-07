@@ -111,7 +111,7 @@ $("form").submit(function(event) {
 
 if(pizzaOrders.length >= 1 ){
   $('.cart').fadeIn()
-  $('#cart').text(`${pizzaOrders.length}`)
+  $('#cart-count').text(`${pizzaOrders.length}`)
   $('#card').click(()=>{
     newPizzaOrder.getPizzaPrice()
   })
