@@ -14,8 +14,8 @@ var checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal')
 
 
 //Get topping price
-Pizza.prototype.getToppingPrice = function (pizzaSize) {
-  switch (pizzaSize) {
+Pizza.prototype.getToppingPrice = function () {
+  switch (this.size) {
       case "large":
       return 200
         break;
@@ -26,7 +26,7 @@ Pizza.prototype.getToppingPrice = function (pizzaSize) {
       return 100
         break;
     default:
-                alert("Please fill out your order");
+              
         return null;
 };
 };
@@ -41,8 +41,8 @@ Pizza.prototype.getCrustPrice = function () {
 };
 
 //Get pizza size price
-Pizza.prototype.getPizzaSizePrice = function (pizzaSize) {
-  switch (pizzaSize) {
+Pizza.prototype.getPizzaSizePrice = function () {
+  switch (this.size) {
   
     case "large":
       return 1500
@@ -54,14 +54,15 @@ Pizza.prototype.getPizzaSizePrice = function (pizzaSize) {
       return 800
         break;
     default:
-                alert("Please fill out your order");
+              
         return null;
 };
 };
 
 //Get total pizza price
 Pizza.prototype.getPizzaPrice = function () {
-  return (this.getCrustPrice() + this.getToppingPrice() + this.getPizzaSizePrice())* pizzaAmount;
+
+   return (this.getCrustPrice() + this.getToppingPrice() + this.getPizzaSizePrice())* this.amount;
 };
 
 
@@ -101,15 +102,26 @@ $("form").submit(function(event) {
 
   newPizzaOrder = new Pizza(pizzaName,pizzaSize,pizzaCrust,pizzaTopping,pizzaAmount)
   pizzaOrders.push(newPizzaOrder)
+  $("#pizzaCategory ").val('');
+ $("#pizzaOption ").val('');
+ $("#pizzaSize ").val('');
+   $("#crust ").val('');
+   $("#topping ").val('');
+   $("#amount").val( '');
 
 if(pizzaOrders.length >= 1 ){
   $('.cart').fadeIn()
   $('#cart').text(`${pizzaOrders.length}`)
+  $('#card').click(()=>{
+    newPizzaOrder.getPizzaPrice()
+  })
 }
 
-// for (let i = 0; i < pizzasOrders.length; i++) {
-//   totalCost += pizzasOrders[i].getPizzaPrice();
-// }
+totalCost = 0;
+
+for (let i = 0; i < pizzaOrders.length; i++) {
+  totalCost += pizzaOrders[i].getPizzaPrice(pizzaOrders[i].amount);
+}
 
 
 $("#order-summary").append(
@@ -119,27 +131,30 @@ $("#order-summary").append(
     " (" +
       newPizzaOrder.size +
     ") - " +
-  //newPizzaOrder .getTypePrice() +
+  newPizzaOrder.getPizzaSizePrice() +
     "</th>" +
     "<td>" +
     newPizzaOrder.topping +
     " - " +
-  //newPizzaOrder .getToppingPrice() +
+  newPizzaOrder.getToppingPrice() +
     "</td>" +
     "<td>" +
       newPizzaOrder.crust +
     " - " +
-  //newPizzaOrder .getCrustPrice() +
+  newPizzaOrder.getCrustPrice() +
     "</td>" +
     "<td>" +
   newPizzaOrder.amount +
     "</td>" +
     "<td>" +
-    // newPizzaOrder .getPizzaPrice() +
+    newPizzaOrder.getPizzaPrice() +
         "</td>" +
     "</tr>"
 );
 
+$("#total-amount").empty();
+    $("#total-amount").append(totalCost);
+    $(".total-amount").show();
 
 
 });
