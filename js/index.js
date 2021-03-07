@@ -112,6 +112,33 @@ if(pizzaOrders.length >= 1 ){
 // }
 
 
+$("#order-summary").append(
+  "<tr>" +
+    '<th scope="row">' +
+      newPizzaOrder.pizza +
+    " (" +
+      newPizzaOrder.size +
+    ") - " +
+  //newPizzaOrder .getTypePrice() +
+    "</th>" +
+    "<td>" +
+    newPizzaOrder.topping +
+    " - " +
+  //newPizzaOrder .getToppingPrice() +
+    "</td>" +
+    "<td>" +
+      newPizzaOrder.crust +
+    " - " +
+  //newPizzaOrder .getCrustPrice() +
+    "</td>" +
+    "<td>" +
+  newPizzaOrder.amount +
+    "</td>" +
+    "<td>" +
+    // newPizzaOrder .getPizzaPrice() +
+        "</td>" +
+    "</tr>"
+);
 
 
 
