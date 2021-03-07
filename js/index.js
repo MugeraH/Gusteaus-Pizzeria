@@ -75,10 +75,9 @@ $(document).ready(function() {
 
   $(function($) {
     var Options = {
-        'meatarian': ['Option1','Option2','Option3','Option4','Option5'],
-        'vegetarian': ['select1','select2','select3','select4','select5'],
-      
-    }
+        'meatarian': ['...','Option1','Option2','Option3','Option4','Option5'],
+        'vegetarian': ['...','select1','select2','select3','select4','select5'],
+          }
 
     var $Options = $('#pizzaOption');
     $('#pizzaCategory').change(function () {
@@ -109,7 +108,7 @@ $("form").submit(function(event) {
 pizzaOrderPrices.push(newPizzaOrder.getPizzaPrice())
 console.log(pizzaOrderPrices.reduce((a,b)=>a+b,0));
   $("#pizzaCategory ").val('');
- $("#pizzaOption ").val('');
+ $("#pizzaOption ").val('...');
  $("#pizzaSize ").val('');
    $("#crust ").val('');
    $("#topping ").val('');
@@ -128,7 +127,6 @@ pizzaOrders = []
   $("#order-summary").empty()
 }
 
-totalCost = 0;
 
 
 $("#order-summary").append(
@@ -161,7 +159,12 @@ $("#order-summary").append(
 
 
 
-$("#total-amount").append(pizzaOrderPrices.reduce((a,b)=>a+b,0));
+totalCost = pizzaOrderPrices.reduce((a,b)=>a+b,0);
+
+let costWithDelivery = totalCost + 300
+console.log(costWithDelivery);
+
+$("#total-amount").text(totalCost);
 
 
 
@@ -177,8 +180,9 @@ var customerName = $('#fullName').val();
 var customerLocation = $('#location').val()
 
 if(!collect){
+
   $('#checkoutText').text(`  Dear ${customerName} your order will be delivered to ${customerLocation} within
-  two hours! Your order total is Ksh.${totalCost + 300} Our rider will call
+  two hours! Your order total is Ksh.${costWithDelivery} Our rider will call
   you on arrival or you can reach us at 0721000000 if you do not recieve any communication within the specific time period`)
 
 $('.cart').fadeOut()
