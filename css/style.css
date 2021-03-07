@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap');
+
+
+/* font-family: 'Pacifico', cursive;
+font-family: 'Roboto', sans-serif; */
 * {
   padding: 0;
   margin: 0;
@@ -6,7 +11,8 @@
 
 body {
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+
 }
 
 * {
@@ -31,7 +37,7 @@ body {
   flex-wrap: wrap;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+
 }
 
 .main-section {
@@ -43,10 +49,10 @@ body {
 
 .aside-section {
   height: 83vh;
-  /* position: sticky; */
+
   transition: all 0.2s ease;
   width: 400px;
-  margin: 10px 65px 0px 10px;
+  margin: 10px 10px 0px 10px;
   padding: 10px;
   -webkit-box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.75);
@@ -125,15 +131,16 @@ th {
 }
 
 #works {
+  display: none;
   width: 100%;
   padding-left: 40px;
   height: 80vh;
   padding-top: 5%;
+  position: relative;
 }
 #wrap {
   width: 100%;
   flex: 2 1 auto;
-
   padding: 0 40px;
 }
 .wrapper {
@@ -147,14 +154,11 @@ th {
   z-index: 1;
 }
 
-.topbar {
-  position: relative;
-  padding: 20px 0;
-  margin: 0 0 40px;
-}
-
 #back {
   display: none;
+  position: absolute;
+  right: 300px;
+  bottom:60px;
 }
 
 .tp-grid {
