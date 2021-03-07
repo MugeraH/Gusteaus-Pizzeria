@@ -15,22 +15,6 @@ body {
   overflow-x: hidden;
 }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #c81717 transparent;
-}
-
-*::-webkit-scrollbar {
-  width: 7px;
-}
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
-*::-webkit-scrollbar-thumb {
-  background: #c81717;
-  border-radius: 10px;
-  border: transparent;
-}
 
 .main-wrapper {
   display: flex;
@@ -45,6 +29,8 @@ body {
   width: 600px;
   flex: 1 1 auto;
   padding: 10px;
+  margin: 10px;
+
 }
 
 .aside-section {
@@ -89,11 +75,11 @@ body {
   font-size: 17px;
   font-weight: 600;
 }
-.cart-button {
+.custom-button {
   border: 1px solid #c81717;
   color: #c81717;
 }
-.cart-button:hover {
+.custom-button:hover {
   background-color: #c81717;
   color: white;
 }
@@ -101,8 +87,10 @@ body {
   display: flex;
 }
 
-.modal.fade {
-  z-index: 10000000 !important;
+
+.modal-content{
+  background-color: white;
+  color: black;
 }
 
 tr:nth-child(even) {
@@ -112,6 +100,9 @@ tr:nth-child(even) {
 th {
   background-color: #c81717 !important;
   color: white;
+}
+td{
+  color: black;
 }
 
 .total-amount,
@@ -134,88 +125,29 @@ th {
   width: 70% !important;
 }
 
-#works {
-  width: 100%;
-  padding-left: 40px;
-  height: 80vh;
-  padding-top: 5%;
-  position: relative;
-}
-#wrap {
-  width: 100%;
-  flex: 2 1 auto;
-  padding: 0 40px;
-}
-.wrapper {
-  position: relative;
-  padding: 0 0 40px 0;
+
+.card{
+  color: black;
 }
 
-.wrapper img {
-  width: 200px;
-  height: 200px;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c81717 transparent;
 }
 
-#back {
-  display: none;
-  position: absolute;
-  right: 300px;
-  bottom: 60px;
+*::-webkit-scrollbar {
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #c81717;
+  border-radius: 10px;
+  border: transparent;
 }
 
-.tp-grid {
-  list-style: none;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.tp-grid li {
-  position: absolute;
-  cursor: pointer;
-  display: none;
-  overflow: hidden;
-  backface-visibility: hidden;
-}
-
-.no-js .tp-grid li {
-  position: relative;
-  display: inline-block;
-}
-
-.tp-grid li img {
-  display: block;
-  border: none;
-}
-
-.tp-title{
-  display: none;
-}
-/* .tp-info, */
-/* .tp-title {
-  position: absolute;
-
-  line-height: 20px;
-  color: #292929;
-  font-size: 22px;
-  line-height: 26px;
-  top: 40%;
-  width: 75%;
-  padding: 10px;
-  font-weight: 400;
-  text-align: right;
-  left: -100%;
-
-}
-
-.tp-title {
-  padding: 10px 35px 10px 10px;
-  left: 0px;
-}
-
-.tp-title span:nth-child(2) {
-  color: white;
-} */
 
 /* .card{
   width: 300px;
