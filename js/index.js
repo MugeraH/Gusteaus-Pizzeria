@@ -242,13 +242,13 @@ $('#myBtn').click(()=>{
         stapel = $grid.stapel({
           randomAngle: false,
           delay:50,
-          gutter: 70,
+          gutter: 50,
           pileAngles : 1,
           onLoad: function(){
             $loader.remove();
           },
           onBeforeOpen : function(pileName){
-             $name.html(pileName);
+            //  $name.html(pileName);
           },
           onAfterOpen : function (pileName){
             $close.show(500);

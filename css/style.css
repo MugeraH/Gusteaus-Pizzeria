@@ -1,36 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap');
-
-
-.card{
-  width: 300px;
-  height: 300px;
-  margin:20px ;
-  border-color: #212529;
-  outline-color: #212529;
-  border-radius: 10px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  overflow: hidden;
-}
-.card-body{
-  background-color: #212529;
-  border-color: #212529;
-  outline-color: #212529;
-}
-.card img {
-  height: 180px;
-  width: 100%;
-  object-fit: fill;
-  
-}
-
-.card p {
-  line-height: 15px;
-}
-
-
-
-
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap");
 
 /* font-family: 'Pacifico', cursive;
 font-family: 'Roboto', sans-serif; */
@@ -45,7 +13,6 @@ body {
   color: white;
   height: 100vh;
   overflow-x: hidden;
-
 }
 
 * {
@@ -70,7 +37,7 @@ body {
   flex-wrap: wrap;
   height: 80vh;
   width: 100vw;
-margin-right: 20px;
+  margin-right: 20px;
 }
 
 .main-section {
@@ -86,9 +53,8 @@ margin-right: 20px;
   width: 400px;
   margin: 10px 10px 0px 10px;
 
-
 }
-.aside-section form{
+.aside-section form {
   padding: 20px;
   margin: 10px 40px 0px 10px;
   -webkit-box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.75);
@@ -148,7 +114,8 @@ th {
   color: white;
 }
 
-.total-amount, .delivery-cost {
+.total-amount,
+.delivery-cost {
   font-weight: bold;
   font-size: 1.6em;
 }
@@ -168,7 +135,6 @@ th {
 }
 
 #works {
-
   width: 100%;
   padding-left: 40px;
   height: 80vh;
@@ -188,14 +154,13 @@ th {
 .wrapper img {
   width: 200px;
   height: 200px;
-  
 }
 
 #back {
   display: none;
   position: absolute;
   right: 300px;
-  bottom:60px;
+  bottom: 60px;
 }
 
 .tp-grid {
@@ -208,7 +173,6 @@ th {
 .tp-grid li {
   position: absolute;
   cursor: pointer;
-
   display: none;
   overflow: hidden;
   backface-visibility: hidden;
@@ -219,18 +183,16 @@ th {
   display: inline-block;
 }
 
-.tp-grid li a {
-  display: block;
-  outline: none;
-}
-
 .tp-grid li img {
   display: block;
   border: none;
 }
 
-.tp-info,
-.tp-title {
+.tp-title{
+  display: none;
+}
+/* .tp-info, */
+/* .tp-title {
   position: absolute;
 
   line-height: 20px;
@@ -243,8 +205,7 @@ th {
   font-weight: 400;
   text-align: right;
   left: -100%;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1),
-    10px 0 10px -3px rgba(0, 0, 0, 0.7) inset 0 0 5px rgba(0, 0, 0, 0.4);
+
 }
 
 .tp-title {
@@ -254,4 +215,31 @@ th {
 
 .tp-title span:nth-child(2) {
   color: white;
+} */
+
+/* .card{
+  width: 300px;
+  height: 300px;
+  margin:20px ;
+  border-color: #212529;
+  outline-color: #212529;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  overflow: hidden;
 }
+.card-body{
+  background-color: #212529;
+  border-color: #212529;
+  outline-color: #212529;
+}
+.card img {
+  height: 180px;
+  width: 100%;
+  object-fit: fill;
+  
+}
+
+.card p {
+  line-height: 15px;
+} */
