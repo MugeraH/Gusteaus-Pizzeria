@@ -231,18 +231,22 @@
                   </div>
                   <div class="mb-2">
                     <label for="amount">Amount</label>
-                    <input class="form-control" id="amount"type="number" value="1" />
+                    <input
+                      class="form-control"
+                      id="amount"
+                      type="number"
+                      value="1"
+                    />
                   </div>
 
                   <button type="submit" id="myBtn" class="btn btn-outline-dark">
                     Add
                   </button>
-                  <div class="d-flex justify-content-center ">
+                  <div class="d-flex justify-content-center">
                     <div class="cart text-center">
-                      <p class="p-0 m-0">Cart items: <span class="cart">1</span></p>
+                      <p class="p-0 m-0">Cart items: <span id="cart"></span></p>
                     </div>
                   </div>
-                
                 </form>
               </div>
             </div>
@@ -281,9 +285,9 @@
                       <tbody id="order-summary"></tbody>
                     </table>
 
-                    <p class="delivery-cost hidden">
+                    <!-- <p class="delivery-cost hidden">
                       Delivery: Ksh. <span id="delivery-amount"></span>
-                    </p>
+                    </p> -->
                     <p class="total-amount hidden">
                       Total: Ksh. <span id="total-amount"></span>
                     </p>

@@ -45,7 +45,7 @@ body {
 
   position: sticky;
   transition: all 0.2s ease;
-  width: 25%;
+  width: 350px;
   margin: 10px;
   padding: 10px;
   -webkit-box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.75);
@@ -54,11 +54,15 @@ body {
 }
 
 .cart {
+  /* display: none; */
   background-color: #c81717;
   color: white;
   padding: 10px;
   margin: 10px;
   width: 300px;
+}
+.toppings{
+  display: flex;
 }
 
 .modal.fade {

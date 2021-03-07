@@ -1,10 +1,10 @@
 //business logic
 
-function Pizza(pizza, size, crust, toppings) {
+function Pizza(pizza, size, crust, topping,amount) {
   this.pizza = pizza;
   this.size = size;
   this.crust = crust;
-  this.toppings = toppings;
+  this.topping = topping;
   this.amount = amount;
 }
 
@@ -12,86 +12,56 @@ var priceSize, priceCrust, priceTopping,pizzaAmount;
 var myModal = new bootstrap.Modal(document.getElementById('myModal'))
 var checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'))
 
-//calculate pizza price
-Pizza.prototype.price = function(pizzaSize, pizzaCrust, pizzaTopping,pizzaAmount) {
+
+//Get topping price
+Pizza.prototype.getToppingPrice = function (pizzaSize) {
   switch (pizzaSize) {
-      case "":
-          priceSize = 0;
-          break;
       case "large":
-          priceSize = 1000;
-          break;
-      case "medium":
-          priceSize = 800;
-          break;
-      case "small":
-          priceSize = 550;
-          break;
-      default:
-          
-          alert("Please fill out your order");
-          return null;
-  };
-
-  switch (pizzaCrust) {
-      case "":
-          priceCrust = 0;
-          break;
-      case "crispy":
-          priceCrust = 100;
-          break;
-      case "stuffed":
-          priceCrust = 200;
-          break;
-      case "gluten":
-          priceCrust = 150;
-          break;
-      default:
-        alert("Please fill out your order");
+      return 200
+        break;
+    case "medium":
+      return 150
+        break;
+    case "small":
+      return 100
+        break;
+    default:
+                alert("Please fill out your order");
         return null;
-  };
+};
+};
 
-  if (pizzaSize == 'large') {
-      priceTopping = pizzaTopping.length * 150;
-  } else if (pizzaSize == 'medium') {
-      priceTopping = pizzaTopping.length * 100;
-  } else if (pizzaSize == 'small') {
-      priceTopping = pizzaTopping.length * 50;
+//Get Crust price
+Pizza.prototype.getCrustPrice = function () {
+  if (this.crust === "thick") {
+    return 100;
+  } else {
+    return 0;
   }
+};
 
-  var pizzaTotal = (priceSize + priceCrust + priceTopping) * pizzaAmount;
-  return pizzaTotal;
-}
-
+//Get pizza size price
+Pizza.prototype.getPizzaSizePrice = function (pizzaSize) {
+  switch (pizzaSize) {
+  
+    case "large":
+      return 1500
+        break;
+    case "medium":
+      return 1000
+        break;
+    case "small":
+      return 800
+        break;
+    default:
+                alert("Please fill out your order");
+        return null;
+};
+};
 
 
 //user logic
 $(document).ready(function() {
-
-  // $("#order-summary").append(
-  //   "<tr>" +
-  //     '<th scope="row">' +
-  //     newPizza.type +
-  //     " (" +
-  //     newPizza.size +
-  //     ") - " +
-  //     newPizza.getTypePrice() +
-  //     "</th>" +
-  //     "<td>" +
-  //     newPizza.topping +
-  //     " - " +
-  //     newPizza.getToppingPrice() +
-  //     "</td>" +
-  //     "<td>" +
-  //     newPizza.crust +
-  //     " - " +
-  //     newPizza.getCrustPrice() +
-  //     "</td>" +
-  //     "<td>" +
-  //     newPizza.getPizzaPrice() +
-  //     "</td>" +
-  //     "</tr>"
-  // );
 
   $(function($) {
     var Options = {
@@ -111,9 +81,32 @@ $(document).ready(function() {
     });
 });
 
-
+let pizzaOrders = []
 $("form").submit(function(event) {
   event.preventDefault();
+  let pizzaName = $("#pizzaOption option:selected").val();
+  let pizzaSize = $("#pizzaSize option:selected").val();
+  let pizzaCrust = $("#crust option:selected").val();
+  let pizzaTopping = $("#topping option:selected").val();
+  let pizzaAmount = $("#amount").val();
+
+
+
+
+  newPizzaOrder = new Pizza(pizzaName,pizzaSize,pizzaCrust,pizzaTopping,pizzaAmount)
+  pizzaOrders.push(newPizzaOrder)
+
+if(pizzaOrders.length >= 1 ){
+  $('.cart').fadeIn()
+  $('#cart').text(`${pizzaOrders.length}`)
+}
+
+// for (let i = 0; i < pizzasOrders.length; i++) {
+//   totalCost += pizzasOrders[i].getPizzaPrice();
+// }
+
+
+
 
 
 });
