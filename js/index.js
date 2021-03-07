@@ -156,23 +156,42 @@ $("#order-summary").append(
 $("#total-amount").append(totalCost);
 $(".total-amount").show();
 
-let collect = true;
+
+var collect = true;
+var customerName ;
+var location;
+
+
+$("form#deliveryForm").submit(function(event) {
+  event.preventDefault();
+  collect = false;
+var customerName = $('#fullName').val();
+var location = $('#location').val()
+
+if(!collect){
+  $('#checkoutText').text(`  Dear ${customerName} your order will be delivered to ${location} within
+  two hours! Your order total is Ksh.${totalCost + 300} Our rider will call
+  you on arrival or you can reach us at 0721000000 if you do not recieve any communication within the specific time period`)
+}
+
+});
+
+$('#deliveryBtn').click(()=>{
+
+  $('#collectOption > button').fadeOut(200)
+  $('.delivery-form > form').fadeIn(500)
+  
+ 
+ })
+
+$('.checkoutBtn').click(()=>{
+  myModal.hide()
+  checkoutModal.show()
+})
+
+
 if(collect){
-  $('.checkoutBtn').click(()=>{
-    myModal.hide()
-    checkoutModal.show()
-    $('#checkoutText').text(`Dear Customer your order will be ready within the hour! Your order total is Ksh.${totalCost}.For any inquries you can reach us at 0721000000`)
-  
-  })
-}else{
-  $('.checkoutBtn').click(()=>{
-    myModal.hide()
-    checkoutModal.show()
-    $('#checkoutText').text(`  Dear ${customerName} your order will be delivered to ${location} within
-    two hours! Your order total is Ksh.${totalCost} Our rider will call
-    you on arrival or you can reach us at 0721000000 if you do not recieve any communication within the specific time period`)
-  
-  })
+  $('#checkoutText').text(`Dear Customer your order will be ready within the hour! Your order total is Ksh.${totalCost}.For any inquries you can reach us at 0721000000`)
 }
 
 
@@ -189,12 +208,7 @@ $('#myBtn').click(()=>{
 
 
 
-$('#deliveryBtn').click(()=>{
- $('#collectOption > button').fadeOut(200)
- $('.delivery-form > form').fadeIn(500)
- console.log('hm');
 
-})
 
   $(function(){
       var $grid = $("#tp-grid"),
