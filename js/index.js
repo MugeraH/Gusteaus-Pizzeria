@@ -59,6 +59,12 @@ Pizza.prototype.getPizzaSizePrice = function (pizzaSize) {
 };
 };
 
+//Get total pizza price
+Pizza.prototype.getPizzaPrice = function () {
+  return (this.getCrustPrice() + this.getToppingPrice() + this.getPizzaSizePrice())* pizzaAmount;
+};
+
+
 
 //user logic
 $(document).ready(function() {
