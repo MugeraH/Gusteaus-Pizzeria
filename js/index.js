@@ -6,6 +6,7 @@ function Pizza(pizza, size, crust, topping,amount) {
   this.crust = crust;
   this.topping = topping;
   this.amount = amount;
+
 }
 
 var priceSize, priceCrust, priceTopping,pizzaAmount;
@@ -67,6 +68,8 @@ Pizza.prototype.getPizzaPrice = function () {
 
 
 
+
+
 //user logic
 $(document).ready(function() {
 
@@ -89,19 +92,22 @@ $(document).ready(function() {
 });
 
 let pizzaOrders = []
+let pizzaOrderPrices = []
 $("form").submit(function(event) {
   event.preventDefault();
   let pizzaName = $("#pizzaOption option:selected").val();
   let pizzaSize = $("#pizzaSize option:selected").val();
   let pizzaCrust = $("#crust option:selected").val();
   let pizzaTopping = $("#topping option:selected").val();
-  let pizzaAmount = $("#amount").val();
+  let pizzaAmount = parseInt($("#amount").val());
 
 
 
 
   newPizzaOrder = new Pizza(pizzaName,pizzaSize,pizzaCrust,pizzaTopping,pizzaAmount)
   pizzaOrders.push(newPizzaOrder)
+pizzaOrderPrices.push(newPizzaOrder.getPizzaPrice())
+console.log(pizzaOrderPrices.reduce((a,b)=>a+b,0));
   $("#pizzaCategory ").val('');
  $("#pizzaOption ").val('');
  $("#pizzaSize ").val('');
@@ -117,11 +123,12 @@ if(pizzaOrders.length >= 1 ){
   })
 }
 
-totalCost = 0;
-
-for (let i = 0; i < pizzaOrders.length; i++) {
-  totalCost += pizzaOrders[i].getPizzaPrice(pizzaOrders[i].amount);
+var resetOrders = ()=>{
+pizzaOrders = []
+  $("#order-summary").empty()
 }
+
+totalCost = 0;
 
 
 $("#order-summary").append(
@@ -153,25 +160,29 @@ $("#order-summary").append(
 );
 
 
-$("#total-amount").append(totalCost);
-$(".total-amount").show();
+
+$("#total-amount").append(pizzaOrderPrices.reduce((a,b)=>a+b,0));
+
 
 
 var collect = true;
-var customerName ;
-var location;
+
 
 
 $("form#deliveryForm").submit(function(event) {
+  resetOrders()
   event.preventDefault();
   collect = false;
 var customerName = $('#fullName').val();
-var location = $('#location').val()
+var customerLocation = $('#location').val()
 
 if(!collect){
-  $('#checkoutText').text(`  Dear ${customerName} your order will be delivered to ${location} within
+  $('#checkoutText').text(`  Dear ${customerName} your order will be delivered to ${customerLocation} within
   two hours! Your order total is Ksh.${totalCost + 300} Our rider will call
   you on arrival or you can reach us at 0721000000 if you do not recieve any communication within the specific time period`)
+
+$('.cart').fadeOut()
+setTimeout(function(){location.reload(); }, 6000);
 }
 
 });
@@ -180,19 +191,24 @@ $('#deliveryBtn').click(()=>{
 
   $('#collectOption > button').fadeOut(200)
   $('.delivery-form > form').fadeIn(500)
-  
- 
- })
+   })
 
 $('.checkoutBtn').click(()=>{
+resetOrders()
   myModal.hide()
   checkoutModal.show()
+  if(collect){
+    $('#checkoutText').text(`Dear Customer your order will be ready within the hour! Your order total is Ksh.${totalCost}.For any inquries you can reach us at 0721000000`);
+  
+     $('.cart').fadeOut()
+
+     setTimeout(function(){location.reload(); }, 6000);
+  
+  }
 })
 
 
-if(collect){
-  $('#checkoutText').text(`Dear Customer your order will be ready within the hour! Your order total is Ksh.${totalCost}.For any inquries you can reach us at 0721000000`)
-}
+
 
 
 });
@@ -203,7 +219,6 @@ if(collect){
 
 $('#myBtn').click(()=>{
   myModal.show()
-
 })
 
 
