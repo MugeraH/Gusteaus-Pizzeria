@@ -18,7 +18,7 @@
   </head>
   <body>
     <div class="container-fluid m-0 p-0">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Gusteau's</a>
           <button
@@ -38,19 +38,17 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
+        
             </ul>
           </div>
         </div>
       </nav>
       <div class="row">
-        <div class="col-md-12">
+        <div class="">
           <div class="main-wrapper">
-            <div class="col-md-6 main-section">
+            <div class="col-md-8 main-section">
               <div id="works">
                 <div class="title"></div>
                 <div class="wrap">
@@ -196,8 +194,10 @@
                     <label for="crust">Crust</label>
                     <select class="form-control" id="crust" required>
                       <option value="">...</option>
-                      <option value="thick">Thick</option>
-                      <option value="thin">Thin</option>
+                      <option value="crispy">Crispy</option>
+                      <option value="stuffed">Stuffued</option>
+                      <option value="gluten-free">Gluten-free</option>
+                      <option value="thin">Stuffued</option>
                     </select>
                   </div>
                   <div class="mb-2">
@@ -210,7 +210,7 @@
                     />
                   </div>
 
-                  <button type="submit" class="btn btn-outline-dark">
+                  <button type="submit" class="btn btn-outline-success mt-2">
                     Add
                   </button>
                   <div class="d-flex justify-content-center">

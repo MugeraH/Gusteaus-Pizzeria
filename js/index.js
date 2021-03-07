@@ -34,9 +34,14 @@ Pizza.prototype.getToppingPrice = function () {
 
 //Get Crust price
 Pizza.prototype.getCrustPrice = function () {
-  if (this.crust === "thick") {
+  if (this.crust === "crispy") {
     return 100;
-  } else {
+  } else if (this.crust === "stuffed") {
+    return 200;
+  } else if (this.crust === "glutten-free") {
+    return 150;
+  }
+  else {
     return 0;
   }
 };
