@@ -79,8 +79,8 @@ $(document).ready(function() {
 
   $(function($) {
     var Options = {
-        'meatarian': ['...','Option1','Option2','Option3','Option4','Option5'],
-        'vegetarian': ['...','select1','select2','select3','select4','select5'],
+        'meatarian': ['...','Chicken sumbreno','Pork Delight','Steakhouse pizza','Art-Chicken-Pesto pizza','Bbq-chicken pizza' , 'Chicken-fajita pizza','Bacon-chicken club pizza','Buffalo chicken pizza'],
+        'vegetarian': ['...','Stuffed spinach Pizza','Tomato Pizza',' Mushroom Broccoli Pizza','Garlic Crust Veggie Pizza','Wild Mushroom Pizza','Cauliflower Pizza Crust','Kale ricotta'],
           }
 
     var $Options = $('#pizzaOption');
