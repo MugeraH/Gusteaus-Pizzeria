@@ -67,7 +67,6 @@ Pizza.prototype.getPizzaSizePrice = function () {
 
 //Get total pizza price
 Pizza.prototype.getPizzaPrice = function () {
-
    return (this.getCrustPrice() + this.getToppingPrice() + this.getPizzaSizePrice())* this.amount;
 };
 
@@ -97,6 +96,7 @@ $(document).ready(function() {
 
 let pizzaOrders = []
 let pizzaOrderPrices = []
+
 $("form").submit(function(event) {
   event.preventDefault();
   let pizzaName = $("#pizzaOption option:selected").val();
@@ -107,11 +107,12 @@ $("form").submit(function(event) {
 
 
 
-
-  newPizzaOrder = new Pizza(pizzaName,pizzaSize,pizzaCrust,pizzaTopping,pizzaAmount)
-  pizzaOrders.push(newPizzaOrder)
+newPizzaOrder = new Pizza(pizzaName,pizzaSize,pizzaCrust,pizzaTopping,pizzaAmount)
+pizzaOrders.push(newPizzaOrder)
 pizzaOrderPrices.push(newPizzaOrder.getPizzaPrice())
-console.log(pizzaOrderPrices.reduce((a,b)=>a+b,0));
+
+
+
   $("#pizzaCategory ").val('');
  $("#pizzaOption ").val('...');
  $("#pizzaSize ").val('');
@@ -196,11 +197,16 @@ setTimeout(function(){location.reload(); }, 6000);
 
 });
 
-$('#deliveryBtn').click(()=>{
 
+$('#myBtn').click(()=>{
+  myModal.show()
+})
+
+$('#deliveryBtn').click(()=>{
   $('#collectOption > button').fadeOut(200)
   $('.delivery-form > form').fadeIn(500)
    })
+
 
 $('.checkoutBtn').click(()=>{
 resetOrders()
@@ -212,12 +218,8 @@ resetOrders()
      $('.cart').fadeOut()
 
      setTimeout(function(){location.reload(); }, 6000);
-  
   }
 })
-
-
-
 
 
 });
@@ -226,9 +228,7 @@ resetOrders()
 
 
 
-$('#myBtn').click(()=>{
-  myModal.show()
-})
+
 
 
 
@@ -242,4 +242,10 @@ $('#myBtn').click(()=>{
 
 
 })
+
+
+
+
+
+
 
