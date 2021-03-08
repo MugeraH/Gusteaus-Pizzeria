@@ -146,28 +146,34 @@ td {
 }
 
 .card {
-  width: 250px;
-  height: 180px;
-  margin: 20px;
-  border-color: #212529;
+  height: 230px;
+  margin: 10px 20px ;
+  border-color:#212529;
   outline-color: #212529;
   border-radius: 10px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   overflow: hidden;
+  text-align: center;
 }
 .card-body {
   background-color: #212529;
   border-color: #212529;
   outline-color: #212529;
+  color: #fff;
 }
 .card img {
+  background-color: #212529;
   height: 180px;
   width: 100%;
   object-fit: fill;
+  padding-bottom: 10px;
+  border-bottom:4px solid #fff;
 }
 
-.card p {
+.card span {
+  width: 100%;
+
   line-height: 15px;
 }
 
