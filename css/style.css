@@ -227,6 +227,21 @@ select option {
   font-family: "Roboto", sans-serif;
 }
 
+
+.about{
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-info p{
+font-size: 19px;
+}
+.logo img{
+  width: 100%;
+object-fit: cover;
+}
 @media screen and (max-width: 1040px) {
   body {
     overflow: scroll;
