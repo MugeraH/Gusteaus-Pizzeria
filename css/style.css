@@ -8,11 +8,7 @@ font-family: 'Roboto', sans-serif; */
   box-sizing: border-box;
 }
 
-li,
-a {
-  border: none;
-  outline: none;
-}
+
 
 .section {
   height: 260px;
@@ -211,6 +207,7 @@ select option {
   border-color: #212529;
   outline-color: #212529;
   color: #fff;
+  
 }
 .card img {
   background-color: #212529;
@@ -221,9 +218,10 @@ select option {
   border-bottom: 4px solid #fff;
 }
 
-.card span {
+.card-body span {
   width: 100%;
-  line-height: 15px;
+  line-height: 20px;
+
   font-family: "Roboto", sans-serif;
 }
 
@@ -252,7 +250,7 @@ object-fit: cover;
   }
 
   .main-section {
-    overflow: scroll;
+    
   }
 
   .card {
