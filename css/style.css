@@ -8,8 +8,6 @@ font-family: 'Roboto', sans-serif; */
   box-sizing: border-box;
 }
 
-
-
 .section {
   height: 260px;
 }
@@ -23,7 +21,6 @@ font-family: 'Roboto', sans-serif; */
   font-family: "Pacifico", cursive;
   font-size: 38px;
   color: #c81717 !important;
-
 }
 .nav-link {
   font-family: "Pacifico", cursive;
@@ -34,7 +31,7 @@ hr {
   padding: 2.5px;
   border: none;
   border-radius: 5px;
-  background-color:#c81717;
+  background-color: #c81717;
   opacity: 1;
   margin: 5px;
 }
@@ -48,6 +45,9 @@ body {
   color: white;
   height: 100%;
   overflow-x: hidden;
+}
+.fade-in {
+  display: none;
 }
 
 .main-wrapper {
@@ -157,9 +157,11 @@ td {
 .delivery-form input {
   width: 70% !important;
 }
-#amount,select,select:focus {
+#amount,
+select,
+select:focus {
   color: #fff !important;
-  font-weight: 400  !important;
+  font-weight: 400 !important;
   outline: none !important;
   border: none !important;
   border-bottom: 1px solid #fff !important;
@@ -171,8 +173,6 @@ select option {
   color: #fff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
-
-
 
 * {
   scrollbar-width: thin;
@@ -207,7 +207,6 @@ select option {
   border-color: #212529;
   outline-color: #212529;
   color: #fff;
-  
 }
 .card img {
   background-color: #212529;
@@ -225,20 +224,23 @@ select option {
   font-family: "Roboto", sans-serif;
 }
 
+/* About page styling */
+.about {
 
-.about{
   height: 80vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.about-info p{
-font-size: 19px;
+
+
+.about-info p {
+  font-size: 19px;
 }
-.logo img{
+.logo img {
   width: 100%;
-object-fit: cover;
+  object-fit: cover;
 }
 @media screen and (max-width: 1040px) {
   body {
@@ -250,7 +252,6 @@ object-fit: cover;
   }
 
   .main-section {
-    
   }
 
   .card {

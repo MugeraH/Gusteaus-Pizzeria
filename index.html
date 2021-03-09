@@ -26,7 +26,7 @@
     <title>Gusteau's | Pizzeria</title>
   </head>
   <body>
-    <div class="container-fluid mb-5 p-0">
+    <div class="container-fluid mb-5 p-0 fade-in">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Gusteau's </a>
@@ -217,7 +217,7 @@
                       alt=""
                     />
                     <div class="card-body">
-                      <span>kale ricotta  Pizza</span>
+                      <span>kale ricotta Pizza</span>
                     </div>
                   </div>
                 </li>
@@ -241,7 +241,7 @@
                       alt=""
                     />
                     <div class="card-body">
-                      <span>stuffed  spinach pizza</span>
+                      <span>stuffed spinach pizza</span>
                     </div>
                   </div>
                 </li>
@@ -271,75 +271,6 @@
                 </li>
               </ul>
             </div>
-
-            <!-- <h5 class="section-title">
-              Toppings
-              <hr />
-            </h5>
-            <div class="section container">
-              <ul class="cs-hidden autoWidth">
-                <li class="item-a">
-                  <div class="card" style="width: 17rem">
-                    <img
-                      src="./images/Meaty/Artichoke-Chicken-Pesto-Pizza.jpg"
-                      class="card-img-top"
-                      alt=""
-                    />
-                    <div class="card-body">
-                      <span>Artickoke-Chicken-Pesto Pizza</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-b">
-                  <div class="card" style="width: 17rem">
-                    <img
-                      src="./images/Meaty/Artichoke-Chicken-Pesto-Pizza.jpg"
-                      class="card-img-top"
-                      alt=""
-                    />
-                    <div class="card-body">
-                      <span>Artickoke-Chicken-Pesto Pizza</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-c">
-                  <div class="card" style="width: 17rem">
-                    <img
-                      src="./images/Meaty/Artichoke-Chicken-Pesto-Pizza.jpg"
-                      class="card-img-top"
-                      alt=""
-                    />
-                    <div class="card-body">
-                      <span>Artickoke-Chicken-Pesto Pizza</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-d">
-                  <div class="card" style="width: 16rem">
-                    <img
-                      src="./images/Meaty/Artichoke-Chicken-Pesto-Pizza.jpg"
-                      class="card-img-top"
-                      alt=""
-                    />
-                    <div class="card-body">
-                      <span>Artickoke-Chicken-Pesto Pizza</span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item-e">
-                  <div class="card" style="width: 16rem">
-                    <img
-                      src="./images/Meaty/Artichoke-Chicken-Pesto-Pizza.jpg"
-                      class="card-img-top"
-                      alt=""
-                    />
-                    <div class="card-body">
-                      <span>Artickoke-Chicken-Pesto Pizza</span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div> -->
           </div>
           <div class="col-md-4 aside-section mb-5">
             <div class="order-form">
@@ -384,7 +315,7 @@
                     <option value="crispy">Crispy</option>
                     <option value="stuffed">Stuffed</option>
                     <option value="gluten-free">Gluten-free</option>
-                    <option value="thin">Stuffued</option>
+                    <option value="thin">Thin</option>
                   </select>
                 </div>
                 <div class="mb-2">
@@ -408,7 +339,7 @@
                         class="mx-3"
                         alt=""
                       />
-                      <button id="myBtn" class="btn custom-button mx-5 mb-0">
+                      <button id="modalBtn" class="btn custom-button mx-5 mb-0">
                         Checkout
                       </button>
                     </div>
@@ -426,7 +357,7 @@
         <div class="col-md-12">
           <div
             class="modal fade"
-            id="myModal"
+            id="displayOrdersModal"
             data-bs-backdrop="static"
             data-bs-keyboard="false"
             tabindex="-1"
@@ -454,9 +385,7 @@
                       <tbody id="order-summary"></tbody>
                     </table>
 
-                    <!-- <p class="delivery-cost hidden">
-                      Delivery: Ksh. <span id="delivery-amount"></span>
-                    </p> -->
+                    
                     <p class="total-amount hidden">
                       Total: Ksh. <span id="total-amount"></span>
                     </p>

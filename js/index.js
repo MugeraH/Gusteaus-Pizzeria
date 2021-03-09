@@ -27,8 +27,7 @@ Pizza.prototype.getToppingPrice = function () {
       return 100
         break;
     default:
-              
-        return null;
+                      return null;
 };
 };
 
@@ -51,7 +50,7 @@ Pizza.prototype.getPizzaSizePrice = function () {
   switch (this.size) {
   
     case "large":
-      return 1500
+      return 1200
         break;
     case "medium":
       return 1000
@@ -71,12 +70,20 @@ Pizza.prototype.getPizzaPrice = function () {
 };
 
 
+let resetForm = ()=>{
+  $("#pizzaCategory ").val('');
+  $("#pizzaOption ").val('...');
+  $("#pizzaSize ").val('');
+  $("#crust ").val('');
+  $("#topping ").val('');
+  $("#amount").val( '');
+}
 
 
 
 //user logic
 $(document).ready(function() {
-
+// Make pizzaOPtion select value dependant on pizzaCategory select value
   $(function($) {
     var Options = {
         'meatarian': ['...','Chicken sumbreno','Pork Delight','Steakhouse pizza','Art-Chicken-Pesto pizza','Bbq-chicken pizza' , 'Chicken-fajita pizza','Bacon-chicken club pizza','Buffalo chicken pizza'],
@@ -112,13 +119,8 @@ pizzaOrders.push(newPizzaOrder)
 pizzaOrderPrices.push(newPizzaOrder.getPizzaPrice())
 
 
+resetForm();
 
-  $("#pizzaCategory ").val('');
- $("#pizzaOption ").val('...');
- $("#pizzaSize ").val('');
-   $("#crust ").val('');
-   $("#topping ").val('');
-   $("#amount").val( '');
 
 if(pizzaOrders.length >= 1 ){
   $('.cart').fadeIn()
@@ -164,9 +166,10 @@ $("#order-summary").append(
 );
 
 
-
+//Get total cost of pizza orders
 totalCost = pizzaOrderPrices.reduce((a,b)=>a+b,0);
 
+//Get total cost of pizza order with delivery
 let costWithDelivery = totalCost + 300
 console.log(costWithDelivery);
 
@@ -176,8 +179,6 @@ $("#total-amount").text(totalCost);
 
 var collect = true;
 
-
-
 $("form#deliveryForm").submit(function(event) {
   resetOrders()
   event.preventDefault();
@@ -186,20 +187,19 @@ var customerName = $('#fullName').val();
 var customerLocation = $('#location').val()
 
 if(!collect){
-
   $('#checkoutText').text(`  Dear ${customerName} your order will be delivered to ${customerLocation} within
   two hours! Your order total is Ksh.${costWithDelivery} Our rider will call
   you on arrival or you can reach us at 0721000000 if you do not recieve any communication within the specific time period`)
 
 $('.cart').fadeOut()
-setTimeout(function(){location.reload(); }, 6000);
+setTimeout(function(){location.reload();}, 6000);
 }
 
 });
 
 
-$('#myBtn').click(()=>{
-  myModal.show()
+$('#modalBtn').click(()=>{
+displayOrdersModal.show()
 })
 
 $('#deliveryBtn').click(()=>{
@@ -210,7 +210,7 @@ $('#deliveryBtn').click(()=>{
 
 $('.checkoutBtn').click(()=>{
 resetOrders()
-  myModal.hide()
+displayOrdersModal.hide()
   checkoutModal.show()
   if(collect){
     $('#checkoutText').text(`Dear Customer your order will be ready within the hour! Your order total is Ksh.${totalCost}.For any inquries you can reach us at 0721000000`);
@@ -236,6 +236,9 @@ $(document).ready(function() {
       } 
   });  
 });
+
+//Animate main page to fade in
+$('.fade-in').fadeIn(1000)
 
 
 
