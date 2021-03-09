@@ -46,9 +46,9 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
-.fade-in {
+/* .fade-in {
   display: none;
-}
+} */
 
 .main-wrapper {
   display: flex;
@@ -226,14 +226,12 @@ select option {
 
 /* About page styling */
 .about {
-
   height: 80vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 
 .about-info p {
   font-size: 19px;

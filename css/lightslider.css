@@ -174,16 +174,16 @@
 .lSAction > .lSPrev {
   background-color: #151516;
   background-image: url("../images/previous.png");
-  background-position:cover;
- background-size: cover;
+  background-position: cover;
+  background-size: cover;
   left: 1px;
   border-radius: 50%;
 }
 .lSAction > .lSNext {
-    background-color: #151516;
-    background-image: url("../images/next.png");
-    background-position:cover;
-   background-size: cover;
+  background-color: #151516;
+  background-image: url("../images/next.png");
+  background-position: cover;
+  background-size: cover;
   right: 1px;
   border-radius: 50%;
 }

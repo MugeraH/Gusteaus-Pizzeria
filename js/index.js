@@ -10,7 +10,7 @@ function Pizza(pizza, size, crust, topping,amount) {
 }
 
 var priceSize, priceCrust, priceTopping,pizzaAmount;
-var myModal = new bootstrap.Modal(document.getElementById('myModal'))
+var displayOrdersModal = new bootstrap.Modal(document.getElementById('displayOrdersModal'))
 var checkoutModal = new bootstrap.Modal(document.getElementById('checkoutModal'))
 
 
@@ -232,13 +232,10 @@ $(document).ready(function() {
       autoWidth:true,
       // loop:true,
       onSliderLoad: function() {
-          $('#autoWidth').removeClass('cS-hidden');
+          $('.autoWidth').removeClass('cS-hidden');
       } 
   });  
 });
-
-//Animate main page to fade in
-$('.fade-in').fadeIn(1000)
 
 
 
