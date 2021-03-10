@@ -240,22 +240,44 @@ select option {
   width: 100%;
   object-fit: cover;
 }
-@media screen and (max-width: 1040px) {
-  body {
-    overflow: scroll;
-    height: 100%;
-  }
-  .main-wrapper {
-    height: 100%;
-  }
+@media screen and (max-width: 1190px) {
 
-  .main-section {
-  }
 
   .card {
-    height: 150px;
+    height: 230px;
+    margin-bottom: 10px;
+  }
+  .card img {
+    height: 170px;
   }
   .aside-section {
     margin-bottom: 50px;
   }
 }
+/* tablet */
+@media screen and (max-width: 1100px) {
+
+  .aside-section {
+    margin-bottom: 50px;
+    width: 700px;
+    margin: 0px auto;
+  }
+}
+
+/* medium sized devices */
+@media screen and (max-width: 625px) {
+
+  .card{
+    margin-left: 0px;
+  }
+  .main-section{
+    width: 100%;
+    min-width: 333px;
+  }
+  .aside-section{
+    width: 500px;
+    margin: 0px auto;
+  }
+}
+
+
