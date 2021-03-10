@@ -8,13 +8,11 @@ font-family: 'Roboto', sans-serif; */
   box-sizing: border-box;
 }
 
-.section {
-  height: 260px;
-}
-.section-title {
-  margin-left: 50px;
-  font-family: "Pacifico", cursive;
-  font-size: 18px;
+body {
+  background-color: #212529;
+  color: white;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .navbar-brand {
@@ -40,15 +38,6 @@ label {
   font-size: 17px;
   font-weight: 500;
 }
-body {
-  background-color: #212529;
-  color: white;
-  height: 100%;
-  overflow-x: hidden;
-}
-/* .fade-in {
-  display: none;
-} */
 
 .main-wrapper {
   display: flex;
@@ -64,6 +53,53 @@ body {
   flex: 1 1 auto;
   padding: 10px;
   margin: 10px;
+}
+
+.section {
+  height: 260px;
+}
+.section-title {
+  margin-left: 50px;
+  font-family: "Pacifico", cursive;
+  font-size: 18px;
+}
+
+.card {
+  height: 230px;
+  margin: 10px 20px;
+  border-color: #212529;
+  outline-color: #212529;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  overflow: hidden;
+  text-align: center;
+}
+.card-body {
+  background-color: #212529;
+  border-color: #212529;
+  outline-color: #212529;
+  color: #fff;
+}
+.card img {
+  background-color: #212529;
+  height: 180px;
+  width: 100%;
+  object-fit: fill;
+  padding-bottom: 10px;
+  border-bottom: 4px solid #fff;
+}
+
+.card-body span {
+  width: 100%;
+  line-height: 20px;
+
+  font-family: "Roboto", sans-serif;
+}
+
+.pizza-name {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .aside-section {
@@ -138,8 +174,7 @@ td {
   color: black;
 }
 
-.total-amount,
-.delivery-cost {
+.total-amount {
   font-weight: bold;
   font-size: 1.6em;
 }
@@ -191,39 +226,6 @@ select option {
   border: transparent;
 }
 
-.card {
-  height: 230px;
-  margin: 10px 20px;
-  border-color: #212529;
-  outline-color: #212529;
-  border-radius: 10px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  overflow: hidden;
-  text-align: center;
-}
-.card-body {
-  background-color: #212529;
-  border-color: #212529;
-  outline-color: #212529;
-  color: #fff;
-}
-.card img {
-  background-color: #212529;
-  height: 180px;
-  width: 100%;
-  object-fit: fill;
-  padding-bottom: 10px;
-  border-bottom: 4px solid #fff;
-}
-
-.card-body span {
-  width: 100%;
-  line-height: 20px;
-
-  font-family: "Roboto", sans-serif;
-}
-
 /* About page styling */
 .about {
   height: 80vh;
@@ -240,9 +242,9 @@ select option {
   width: 100%;
   object-fit: cover;
 }
+
+/* Media queries */
 @media screen and (max-width: 1190px) {
-
-
   .card {
     height: 230px;
     margin-bottom: 10px;
@@ -254,9 +256,8 @@ select option {
     margin-bottom: 50px;
   }
 }
-/* tablet */
-@media screen and (max-width: 1100px) {
 
+@media screen and (max-width: 1100px) {
   .aside-section {
     margin-bottom: 50px;
     width: 700px;
@@ -264,20 +265,19 @@ select option {
   }
 }
 
-/* medium sized devices */
 @media screen and (max-width: 625px) {
-
-  .card{
+  body {
+    overflow-x: scroll;
+  }
+  .card {
     margin-left: 0px;
   }
-  .main-section{
+  .main-section {
     width: 100%;
     min-width: 333px;
   }
-  .aside-section{
+  .aside-section {
     width: 500px;
     margin: 0px auto;
   }
 }
-
-
