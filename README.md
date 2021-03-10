@@ -2,7 +2,7 @@
 
 ## Description
 
-Gusteau's pizzeria is a online pizza order and delivery website that allows a user to order pizza online and choose a delivery option if they would want it delivered to them,otherwise they can collent it when it is ready.
+Gusteau's pizzeria is a online pizza order and delivery website that allows a user to order pizza online and choose a delivery option if they would want it delivered to them,otherwise they can collect it when it is ready.
 
 ## Live site
 
@@ -15,7 +15,7 @@ Visit the live site [Here](https://mugerah.github.io/Gusteaus-Pizzeria/.)
 ## Project Setup Instructions
 
 - Open Terminal {Ctrl+Alt+T}
-- git clone https://github.com/MugeraH/Delani-studio.git
+- git clone https://github.com/MugeraH/Gusteaus-Pizzeria.git
 - cd delani-studio
 - code .(for Vs Code) or atom .(for Atom)
 
