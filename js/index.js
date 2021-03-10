@@ -112,7 +112,10 @@ $("form").submit(function(event) {
   let pizzaTopping = $("#topping option:selected").val();
   let pizzaAmount = parseInt($("#amount").val());
 
-
+if(pizzaAmount < 1){
+  alert('Please select amount of pizza that you want');
+  return;
+}
 
 newPizzaOrder = new Pizza(pizzaName,pizzaSize,pizzaCrust,pizzaTopping,pizzaAmount)
 pizzaOrders.push(newPizzaOrder)
@@ -171,7 +174,7 @@ totalCost = pizzaOrderPrices.reduce((a,b)=>a+b,0);
 
 //Get total cost of pizza order with delivery
 let costWithDelivery = totalCost + 300
-console.log(costWithDelivery);
+
 
 $("#total-amount").text(totalCost);
 
